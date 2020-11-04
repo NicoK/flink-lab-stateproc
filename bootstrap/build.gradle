@@ -1,0 +1,13 @@
+apply plugin: 'application'
+
+mainClassName = 'com.ververica.stateproc.BootstrapJob'
+
+// common set of dependencies
+dependencies {
+    // --------------------------------------------------------------
+    // Compile-time dependencies that should NOT be part of the
+    // shadow jar and are provided in the lib folder of Flink
+    // --------------------------------------------------------------
+
+    flinkShadowJar "org.apache.flink:flink-state-processor-api_${scalaBinaryVersion}:${flinkVersion}"
+}
